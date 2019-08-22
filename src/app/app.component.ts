@@ -1,17 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Angular Elements de Zero a Héroe';
   imgUrl = 'ng-bo';
   showComponent = false;
-
-  ngOnInit(): void {
-    this.setData();
-  }
 
   toggle() {
     this.showComponent = !this.showComponent;
