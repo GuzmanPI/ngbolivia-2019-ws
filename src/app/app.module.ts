@@ -17,13 +17,8 @@ import {createCustomElement} from '@angular/elements';
     MatButtonModule
   ],
   providers: [],
-  entryComponents: [HdevLogoComponent]
+  entryComponents: []
 })
 export class AppModule {
-  constructor(injector: Injector) {
-    const el = createCustomElement(HdevLogoComponent, { injector });
-    customElements.define('hdev-logo-el', el);
-  }
-
   ngDoBootstrap() {}
 }
