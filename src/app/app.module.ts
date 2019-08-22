@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {Injector, NgModule} from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 
 import { HdevLogoComponent } from './logo.component';
 
-import { AppComponent } from './app.component';
+import {createCustomElement} from '@angular/elements';
 
 @NgModule({
   declarations: [
-    HdevLogoComponent,
-    AppComponent
+    HdevLogoComponent
   ],
   imports: [
     BrowserModule,
@@ -18,8 +17,13 @@ import { AppComponent } from './app.component';
     MatButtonModule
   ],
   providers: [],
-  entryComponents: [HdevLogoComponent],
-  bootstrap: [AppComponent]
+  entryComponents: [HdevLogoComponent]
 })
 export class AppModule {
+  constructor(injector: Injector) {
+    const el = createCustomElement(HdevLogoComponent, { injector });
+    customElements.define('hdev-logo-el', el);
+  }
+
+  ngDoBootstrap() {}
 }
