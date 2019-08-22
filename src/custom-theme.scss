@@ -12,11 +12,11 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$ws2019-primary: mat-palette($mat-indigo);
-$ws2019-accent: mat-palette($mat-pink, A200, A100, A400);
+$ws2019-primary: mat-palette($mat-yellow);
+$ws2019-accent: mat-palette($mat-gray, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$ws2019-warn: mat-palette($mat-red);
+$ws2019-warn: mat-palette($mat-purple);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $ws2019-theme: mat-light-theme($ws2019-primary, $ws2019-accent, $ws2019-warn);

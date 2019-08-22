@@ -1,8 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatIconModule, MatIconRegistry } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,22 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatIconModule,
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
+    this.matIconRegistry.addSvgIcon(
+      'twitter',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/twitter.svg')
+    );
+  }
+}
