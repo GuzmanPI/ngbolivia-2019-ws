@@ -1,11 +1,5 @@
 <div style="text-align: center">
-  <div *ngIf="!showComponent">
-    <img width="300" alt="Logo" src="../assets/ng-bo.png">
-    <h1>Angular Elements de Zero a Héroe</h1>
-  </div>
-
-  <hdev-logo *ngIf="showComponent"></hdev-logo>
-
+  <hdev-logo [title]="title" [imgUrl]="imgUrl"></hdev-logo>
   <button mat-flat-button color="accent" (click)="toggle()">Swap</button>
 </div>
 

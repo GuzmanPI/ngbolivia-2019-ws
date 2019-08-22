@@ -1,25 +1,30 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
-  logo = 'ng-bo';
+export class AppComponent implements OnInit {
+  title = 'Angular Elements de Zero a Héroe';
+  imgUrl = 'ng-bo';
   showComponent = false;
+
+  ngOnInit(): void {
+    this.setData();
+  }
 
   toggle() {
     this.showComponent = !this.showComponent;
-    this.setLog();
+    this.setData();
   }
 
-  private setLog() {
-    console.log(this.showComponent);
-
+  private setData() {
     if (!this.showComponent) {
-      this.logo = 'ng-bo';
+      this.title = 'Angular Elements de Zero a Héroe';
+      this.imgUrl = 'ng-bo';
     } else {
-      this.logo = 'hdevs-logo';
+      this.title = 'RxJs Live';
+      this.imgUrl = 'rxjs-live-logo';
     }
   }
 }
