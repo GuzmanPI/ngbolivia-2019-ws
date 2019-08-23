@@ -4,6 +4,28 @@
 
 Corra el comando `ng add ngx-build-plus` para ininstalar.
 
-## Construcción del proyecto
+## Actualizar angular.json
 
-Corra el comando `ng generate component nombre-del-componente` para generar un nuevo componente. Tambien puede usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```json
+    [...]
+    "architect": {
+        "build": {
+            "builder": "ngx-build-plus:build",
+            [...]
+        }
+    }
+    [...]
+```
+
+## Agregar script de construcción
+
+`"wc-build": "ng build ws2019 --output-hashing=none --single-bundle true --keep-polyfills true"`
+
+## Construir el componente
+
+Corra el comando `npm run wc-build`
+
+
+## Levantar aplicachión html
+
+Corra el comando `npx live-server demo`
