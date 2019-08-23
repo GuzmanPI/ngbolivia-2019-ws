@@ -1,0 +1,10 @@
+.employee-card {
+    max-width: 265px;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+}
+
+.employee-header-image {
+    background-size: cover;
+}

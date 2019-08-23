@@ -1,0 +1,1 @@
+ng build ngelements --prod --output-hashing=none --single-bundle true --keep-polyfills true

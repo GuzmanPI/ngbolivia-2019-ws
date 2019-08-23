@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "wc-build": "ng build --output-hashing=none --single-bundle true --keep-polyfills true\n"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~9.0.0-next.3",
     "@angular/router": "~9.0.0-next.3",
     "document-register-element": "^1.7.2",
+    "ngx-build-plus": "^8.1.4",
     "rxjs": "~6.5.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
